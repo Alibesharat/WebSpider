@@ -11,7 +11,7 @@ namespace WebSpider.Insfrastracture.Diextensions
     public static class Diextension
     {
 
-        public static IServiceProvider ConfigureServices( string[] args)
+        public static IServiceProvider ConfigureServices()
         {
             var configuration = new ConfigurationBuilder()
            .SetBasePath(Directory.GetCurrentDirectory())
@@ -23,7 +23,7 @@ namespace WebSpider.Insfrastracture.Diextensions
            var storagetype = (StorageType) Enum.Parse(typeof(StorageType), StorageOptions.GetSection("StorageType").Value, true);
 
 
-            return Host.CreateDefaultBuilder(args)
+            return Host.CreateDefaultBuilder()
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.Configure<StorageOptions>(StorageOptions);

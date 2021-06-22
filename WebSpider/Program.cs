@@ -10,7 +10,7 @@ namespace WebSpider
     {
         static async Task Main(string[] args)
         {
-            var services = Diextension.ConfigureServices(args);
+            var services = Diextension.ConfigureServices();
           
             var StoreService = services.GetRequiredService<IStoreService>();
             var Crawler = services.GetRequiredService<ICrawlerService>();
